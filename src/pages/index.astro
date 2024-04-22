@@ -1,0 +1,13 @@
+---
+import Layout from '../layouts/Layout.astro'
+import Three from '../components/Three.jsx'
+---
+
+<Layout title='CONESA'>
+	<main class='h-screen flex justify-center bg-slate-500'>
+		<Three
+			client:load
+			title='conesa'
+		/>
+	</main>
+</Layout>
