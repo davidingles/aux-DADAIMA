@@ -5,18 +5,8 @@ import { Stats, OrbitControls, Environment, useGLTF, Clone, Html, ContactShadows
 import { useControls } from 'leva'
 
 const Models = [
-  // { title: 'Hammer', url: './models/hammer.glb' },
-  // { title: 'cajaSeparadorRemesh', url: './gltf/cajaSeparadorRemesh.glb' },
-  // { title: 'cajaSeparadorRemesh2', url: './gltf/cajaSeparadorRemesh2.glb' },
-  // { title: 'troquel4e0067_glb', url: './gltf/troquel4e0067_glb.glb' },
-  // { title: 'CajaSeparador', url: './gltf/CajaSeparador.glb' },
-  // { title: 'jamoneroMacondo2', url: './gltf/jamoneroMacondo2.glb' },
-  // { title: 'jamoneroMacondo2', url: './gltf/jamoneroMacondo2.glb' },
-  // { title: 'antorcha2', url: './antorcha2.glb', miEscala: .5, miPosicion: -0.3 },
-  // { title: 'antorcha1', url: './antorcha1.glb', miEscala: .5, miPosicion: -0.3 },
-  // { title: 'donaciones', url: './donaciones.glb', miEscala: .2, miPosicion: -0.3 },
-  { title: 'DADAIMA', url: './DADAIMA.glb', miEscala: .5, miPosicion: 0.0 },
-  { title: 'DADAIMA1', url: './DADAIMA1.glb', miEscala: .5, miPosicion: 0.0 },
+  { title: 'DADAIMA', url: './DADAIMA3.glb', miEscala: .4, miPosicion: -0.2 },
+  // { title: 'DADAIMA1', url: './DADAIMA1.glb', miEscala: .5, miPosicion: 0.0 },
 ]
 
 function Model({ url, miEscala, miPosicion }) {
@@ -30,9 +20,6 @@ function Model({ url, miEscala, miPosicion }) {
   const group = useRef()
   useFrame((state) => {
     const t = state.clock.getElapsedTime()
-    // group.current.rotation.x = THREE.MathUtils.lerp(group.current.rotation.x, Math.cos(t / 4) / 20 + 0.25, 0.1)
-    // group.current.rotation.y = THREE.MathUtils.lerp(group.current.rotation.y, Math.sin(t / 8) / 10, 0.1)
-    // group.current.rotation.z = THREE.MathUtils.lerp(group.current.rotation.z, Math.sin(t / 8) / 20, 0.1)
     group.current.position.y = miPosicion
     group.current.position.y = THREE.MathUtils.lerp(group.current.position.y, (-2 + Math.sin(t)) / 90, 0.6)
   })
